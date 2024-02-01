@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal 💖</title>
+</head>
+<body>
+    <h1>Valentine's Day Proposal 💖</h1>
+    
+    <div>
+        <p style="font-size: 18px; line-height: 1.6;">
+            As we celebrate four incredible years together, I find myself more in love with you each day.
+            Your laughter is my favorite melody, and your presence, my greatest comfort.
+        </p>
+    </div>
+
+    <div>
+        <label>Will you be my Valentine this year?</label>
+        <br>
+        <input type="radio" name="valentine_choice" value="Yes"> Yes
+        <input type="radio" name="valentine_choice" value="No"> No
+    </div>
+
+    <div>
+        <p id="valentine_response"></p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const radioButtons = document.querySelectorAll('input[name="valentine_choice"]');
+            const responseElement = document.getElementById('valentine_response');
+
+            radioButtons.forEach(function (radio) {
+                radio.addEventListener('change', function () {
+                    const choice = document.querySelector('input[name="valentine_choice"]:checked').value;
+
+                    if (choice === "Yes") {
+                        responseElement.innerHTML = "🌹🥰 Yess! Thanks for making me the luckiest guy. I want to enjoy every moment with you 🥰🌹";
+                    } else if (choice === "No") {
+                        responseElement.innerHTML = "❌ This option is not allowed. Please reconsider! ❤️";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
